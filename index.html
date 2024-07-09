@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="l.jpg">
+    <title>Oi Luan</title>
+</head>
+<body>
+
+
+
+    <div id="conteudo">
+        <h2>E ai Luan, quer casar comigo?</h2>
+        <div style="margin: auto;width: 170px;">
+            <button style="position: fixed;display: block;" class="btn" onclick="sim()">SIM</button>
+            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
+        </div>
+    </div>
+    <body onload="preCarregamento();">
+
+        <div class="pre-carregamento">
+            <div class="efeito-carregamento"> <img src="fofo.gif" alt="" width="400px"></div>
+        </div>
+</body>
+
+<script>
+    function sim() {
+        alert("bah, tá fudido mané! :)");
+        // redireciona para um URL após clicar no SIM
+        location.href = "https://www.youtube.com/watch?v=TATkXfZWgYU";
+    }
+
+    function desvia(btn) {
+        // btn declarado na função
+        btn.style.position = 'absolute';
+        btn.style.bottom = geraPosicao(10, 90);
+        btn.style.left = geraPosicao(10, 90);
+        console.log('opa, desviei...');
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + "%";
+    }
+
+  
+    const pre_carregamento = document.querySelector("div.pre-carregamento");
+
+function preCarregamento(){
+    pre_carregamento.style.opacity = "1";
+
+setTimeout(() => {
+    pre_carregamento.style.display = "none";
+}, 3000);
+}
+</script>
+    
+</body>
+</html>
